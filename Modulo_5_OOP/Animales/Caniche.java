@@ -1,3 +1,5 @@
+package Modulo_5_OOP.Animales;
+
 public class Caniche extends Perro {
 
     Caniche(String nuevoNombre, int nuevaEdad, String nuevoColor, String nuevaCaracteristica) {

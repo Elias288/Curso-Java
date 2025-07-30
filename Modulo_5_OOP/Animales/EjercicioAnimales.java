@@ -1,3 +1,5 @@
+package Modulo_5_OOP.Animales;
+
 public class EjercicioAnimales {
     public static void main(String[] args) {
 

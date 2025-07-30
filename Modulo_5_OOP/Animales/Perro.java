@@ -1,3 +1,5 @@
+package Modulo_5_OOP.Animales;
+
 public class Perro extends Animal {
     private String característica;
 

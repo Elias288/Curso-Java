@@ -1,3 +1,5 @@
+package Modulo_5_OOP.Animales;
+
 public class Gato extends Animal {
 
     Gato(String nuevoNombre, int nuevaEdad, String nuevoColor) {
