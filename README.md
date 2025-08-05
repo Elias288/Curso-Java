@@ -9,6 +9,7 @@ Ejemplos y ejercicios prácticos de java
 - [Módulo 6 - Colecciones](https://docs.google.com/presentation/d/1pZ9S404tYY_pRcLW1E9jR-Og8yTd7ljYmge0Dt_zZDA/edit?usp=sharing)
   - [Ejercicio de ArrayList](./src/Modulo_6_Colecciones/EjercicioArrayList/Ejercicio_ArrayList.java)
   - [Ejercicio de HashMap/HashTree](./src/Modulo_6_Colecciones/EjercicioHashMap/Ejercicio_HashMap.java)
+  - [Ejercicio de Iteradores y recorrido](./src/Modulo_6_Colecciones/EjercicioIteradoresYRecorrido/IteradoresYRecorridos.java)
 
 ## Compilación sin IDE
 
