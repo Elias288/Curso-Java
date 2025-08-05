@@ -4,11 +4,11 @@ public class EjercicioAnimales {
     public static void main(String[] args) {
 
         Animal animal1 = new Animal("Animal", 1, "rojo");
-        Perro animal2 = new Perro("pepe", 5, "amarillo", "rompebolas");
+        Perro animal2 = new Perro("juan", 5, "amarillo", "rompebolas");
         Gato animal3 = new Gato("mishi", 3, "blanco");
         Caniche animal4 = new Caniche("Kiki", 5, "negro", "Pequeño");
 
-        System.out.println("Sonidos de los animales:");
+        System.out.println("Sonidos de los animales");
         animal1.hacerSonido();
         animal2.hacerSonido();
         animal3.hacerSonido();
