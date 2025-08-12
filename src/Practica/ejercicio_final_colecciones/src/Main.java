@@ -1,6 +1,24 @@
 import java.util.*;
 
 public class Main {
+    //TODO agregar mensajes de confirmacion y cambiar los nombre de las variable por nombres mas especificos
+    static Libros  buscarLibros (TreeSet<Libros> listadelibros,String libroBusc) {
+
+        for (Libros libron : listadelibros) {
+
+            if (libron.getTitulos().equals(libroBusc)) {
+                return libron;
+
+            }
+
+        }
+
+
+
+
+        return null;
+    }
+
 
     public static void mostrarMenu() {
         System.out.println();
@@ -56,11 +74,54 @@ public class Main {
                     System.out.println("Ingresa el nombre del usuario");
                     String nombreUsuario = scanner.nextLine();
                     listaDeUsuarios.add(nombreUsuario);
-
+break;
 
                 case 3:
-                    //TODO: Prestar libro
+                    //TODO: Prestar libro/terminar
                     //el "t0do" es un marcador
+
+                    /*
+                    se ingresa el nombre del usuario y el titulo del libro qeu se quiere prestar
+                    se busca qeu el libro exista y si existe se va a agrega a la lista de lo libros prestados al usuario
+                    si es la primera vez qeu el usuario pide prestado un libro se tiene que crear una lista de libros prestados y agregar el usuario a la
+                    lista de prestamos.
+                    si no es la primera vez que el usuario pide prestado un libro simplemente se agrega el libro a la lista que ya tiene
+                     */
+                    System.out.println("Ingresa el usuario para prestar el libro");
+                    String usuarioPrest = scanner.nextLine();
+                    if (!listaDeUsuarios.contains(usuarioPrest)) {
+                        System.out.println("El usuario ingresado no existe o no esta registrado");
+                        break;
+                    }
+
+                    System.out.println("Ingresa el titulo del libro para prestar a " + usuarioPrest);
+                    String libroPrest = scanner.nextLine();
+                    Libros libron = buscarLibros(listaDeLibros, libroPrest);
+                    if (libron == null) {
+                        System.out.println("no se encontro el libro buscado");
+                        break;
+                    }
+
+                    if (!listaDeLibros.contains(libron)) {
+                        System.out.println("El libro ingresado no existe o no esta registrado");
+                        break;
+                    }
+
+
+
+                    if (!listaDePrestamos.containsKey(usuarioPrest)) {
+                        LinkedList<Libros> nuevaListaDeLibros = new LinkedList<Libros>();
+                        nuevaListaDeLibros.add(libron);
+                        listaDePrestamos.put(usuarioPrest, nuevaListaDeLibros);
+                        break;
+                    } else {
+                        //crear una variable auxiliar donde se guardara la lista de ibros qeu se le presto al usuario y luego poner la lista actualizada en la lista original
+                        LinkedList<Libros> librosprestados1 = listaDePrestamos.get(usuarioPrest);
+                        librosprestados1.add(libron);
+                        listaDePrestamos.put(usuarioPrest,librosprestados1);
+
+                    }
+
                     break;
 
 
@@ -73,9 +134,14 @@ public class Main {
                         System.out.println("- " + libro.getTitulos());
 
                     }
-
+break;
                 case 5:
-                // TODO: Mostrar usuarios
+                    System.out.println("\n lista de usuarios:");
+                    //recorrer on for each (sintaxis simplificada)
+                    for (String usuarioX : listaDeUsuarios) {
+                        System.out.println("- " + usuarioX);
+
+                    }
 
                     
 
@@ -87,9 +153,23 @@ public class Main {
 
 
                 case 6:
-                // TODO: mostrar prestamos
 
 
+                    for (Map.Entry<String, LinkedList<Libros>> prestamos : listaDePrestamos.entrySet()) {
+                        System.out.println(prestamos.getKey());
+                        LinkedList<Libros> librosPrestadosAlUsuario = prestamos.getValue();
+
+                        Iterator<Libros> libroiterator = librosPrestadosAlUsuario.iterator();
+                        while (libroiterator.hasNext()) {
+                            String titulo2 = libroiterator.next().getTitulos();
+                            System.out.print("- " + titulo2);
+
+                        }
+
+                        System.out.println("\n");
+                    }
+
+                    break;
             }
 
         } while (opcion != 0);
