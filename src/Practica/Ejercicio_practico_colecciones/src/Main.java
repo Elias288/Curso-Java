@@ -25,6 +25,18 @@ public class Main {
          * - Usar la función toString() de la clase Estudiante
          */
 
+        for (int i = 0;i < alumnos.size() ;i ++) {
+            System.out.println(alumnos.get(i).toString());
+        }
+
+        /*for (Estudiante alumnox : alumnos) {                  //otra forma mas sencilla de hacerlo
+            System.out.println("- " + alumnox.toString());
+        }
+        */
+
+
+
+
         /*
          * TODO: Función de búsqueda
          * - Buscar un estudiante por su ID de manera secuencial
