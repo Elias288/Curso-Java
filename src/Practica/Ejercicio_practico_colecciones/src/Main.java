@@ -4,6 +4,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
+
+    static Estudiante buscarAlumno (List<Estudiante> alumnos,int id) {
+        for (int i = 0; i < alumnos.size(); i++) {
+            if (id == alumnos.get(i).getId()) {
+                return alumnos.get(i);
+            }
+
+        }
+
+
+        return null;//si no entro nunca al if no encontro el numero buscado y retorna -1
+    }
     public static void main(String[] args) {
         List<Estudiante> alumnos = new ArrayList<>();
         // Agregar (al final de la lista)
@@ -24,7 +36,7 @@ public class Main {
          * - Usar un for para recorrer la lista
          * - Usar la función toString() de la clase Estudiante
          */
-
+        System.out.println("---Listado simple ---- ej:1 \n");
         for (int i = 0;i < alumnos.size() ;i ++) {
             System.out.println(alumnos.get(i).toString());
         }
@@ -43,6 +55,15 @@ public class Main {
          * - Si se encuentra, imprimir sus datos
          * - Si no se encuentra, imprimir un mensaje indicando que no existe
          */
+        System.out.println("\n ---Busqueda ---- ej:2 ");
+        Estudiante alumnox = buscarAlumno(alumnos,105);
+        if (alumnox == null) {
+            System.out.println("el alumno buscado no existe");
+        } else
+            System.out.println(alumnox.toString());
+        
+
+
 
         /*
          * TODO: Actualización de datos
