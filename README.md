@@ -3,6 +3,7 @@ Ejemplos y ejercicios prácticos de java
 
 - Prácticas
   - [Biblioteca](./src/Practica/ejercicio_final_colecciones/Readme.md)
+  - [Ejercicio de Colecciones](./src/Practica/Ejercicio_practico_colecciones/README.md)
 - [Módulo extra - Git/Github](https://docs.google.com/presentation/d/1DqdbNjNjkL9wKToBH1xh6Dyu0GY6jptj3OxJCCpiMsY/edit?usp=sharing)
 - Módulo 5 - Programación orientada a objetos en Java
   - [Ejercicio de Animales](./src/Modulo_5_OOP/Animales/EjercicioAnimales.java)
