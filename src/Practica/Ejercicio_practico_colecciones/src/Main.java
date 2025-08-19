@@ -1,14 +1,41 @@
 package Practica.Ejercicio_practico_colecciones.src;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class Main {
+
+    static List<Estudiante> ordenarlista (List<Estudiante> alumnos) {
+
+        Estudiante aux;
+
+        for (int a = 0; (a < alumnos.size()); a ++) {
+            for (int b = 0 ; (b < alumnos.size()) ; b ++) {
+                if (alumnos.get(a).getPromedio() > alumnos.get(b).getPromedio()) {
+                    aux = alumnos.get(b);
+                    alumnos.set(b,alumnos.get(a));
+                    alumnos.set(a,aux);
+
+                }
+
+            }
+
+
+
+        }
+        return alumnos;
+    }
+
     static void mostrarLista (List<Estudiante> alumnos) {
         for (int i = 0;i < alumnos.size() ;i ++) {
             System.out.println(alumnos.get(i).toString());
         }
 
+    }
+
+    static void mostrarListaTree (TreeSet<Estudiante> alumnos) {
+        for (Estudiante alumno : alumnos) {
+            System.out.println("- " + alumno.toString());
+        }
     }
 
     static Estudiante buscarAlumno (List<Estudiante> alumnos,int id) {
@@ -135,8 +162,23 @@ public class Main {
          * - Ordenar la nueva lista por promedio de mayor a menor
          * - Imprimir la nueva lista
          */
+        System.out.println("\n ---ordenar ---- ej:5 ");
 
+        List<Estudiante> listaordenada = ordenarlista(alumnos);
 
+        TreeSet <Estudiante> alumnoscopia = new TreeSet<>(new Comparator<Estudiante>() {
+            @Override
+            public int compare(Estudiante a, Estudiante b) {
+                // Si los promedios son iguales, compara por ID para evitar que se eliminen duplicados
+                int cmp = Double.compare(b.getPromedio(), a.getPromedio());
+                if (cmp == 0) {
+                    return Integer.compare(a.getId(), b.getId());
+                }
+                return cmp;
+            }
+        });
+        alumnoscopia.addAll(listaordenada);
+        mostrarListaTree(alumnoscopia);
 
 
 
@@ -153,6 +195,13 @@ public class Main {
          * - Imprimir la lista de materias con sus estudiantes
          */
 
+
+
+
+
+
+
+        
         /*
          * TODO: Listar estudantes de una materia
          * - Dada una materia, listar todos los estudiantes que la cursan
