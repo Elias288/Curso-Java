@@ -195,13 +195,39 @@ public class Main {
          * - Imprimir la lista de materias con sus estudiantes
          */
 
+              // nombre de las materias y cada materia compuesta por la lista de estudiantes
+        HashMap<String,List<Estudiante>> Materias = new HashMap();
+
+        List<Estudiante> alumnosDeMate = new ArrayList<>();
+        // Agregar (al final de la lista)
+        alumnosDeMate.add(new Estudiante(101, "Ana", 8.5));
+        alumnosDeMate.add(new Estudiante(102, "Bruno", 6.9));
+        alumnosDeMate.add(new Estudiante(103, "Carla", 9.1));
+
+        List<Estudiante> alumnosDeHistoria = new ArrayList<>();
+        // Agregar (al final de la lista)
+        alumnosDeHistoria.add(new Estudiante(105, "Elena", 7.4));
+        alumnosDeHistoria.add(new Estudiante(106, "Fabián", 8.0));
+        alumnosDeHistoria.add(new Estudiante(107, "Gabriela", 6.5));
+
+        Materias.put("Matematicas",alumnosDeMate);
+        Materias.put("Historia",alumnosDeHistoria);
+                                                                //le paso la cosa
+        for (Map.Entry<String, List<Estudiante>> prestamos : Materias.entrySet()) {
+            System.out.println(prestamos.getKey());   //saco la key del mapa
+            List<Estudiante> alumnosDeLaMateria = prestamos.getValue();    // saco el valor de la key del mapa
+
+            mostrarLista(alumnosDeLaMateria);
+            
+            System.out.println("\n");
+        }
 
 
 
 
 
 
-        
+
         /*
          * TODO: Listar estudantes de una materia
          * - Dada una materia, listar todos los estudiantes que la cursan
