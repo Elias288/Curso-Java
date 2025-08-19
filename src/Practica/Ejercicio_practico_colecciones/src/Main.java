@@ -61,7 +61,7 @@ public class Main {
             System.out.println("el alumno buscado no existe");
         } else
             System.out.println(alumnox.toString());
-        
+
 
 
 
@@ -73,11 +73,47 @@ public class Main {
          * - Si no se encuentra, imprimir un mensaje indicando que no existe
          */
 
+        System.out.println("\n ---actualizacion de datos ---- ej:3 ");
+        Estudiante alumnoy = buscarAlumno(alumnos,107);
+        if (alumnoy == null) {
+            System.out.println("el alumno buscado no existe");
+        } else{
+
+            System.out.println("datos nose \t\t\t" + alumnoy.toString());
+            alumnoy.setPromedio(4);
+
+            for (int i = 0; i < alumnos.size(); i++) {
+                if (alumnoy.equals(alumnos.get(i))) {
+                    alumnos.set(i,alumnoy);
+                }
+            }
+            System.out.println("datos actualizados \t" + alumnoy.toString());
+
+        }
+
+
+
+
+
         /*
          * TODO: Eliminación de un estudiante
          * - Buscar un estudiante por su ID
          * - Si se encuentra, eliminarlo de la lista
          */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         /*
          * TODO: Nueva lista evitando duplicados y ordenada por propmedio
