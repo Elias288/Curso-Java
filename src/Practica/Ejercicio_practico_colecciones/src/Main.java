@@ -4,6 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
+    static void mostrarLista (List<Estudiante> alumnos) {
+        for (int i = 0;i < alumnos.size() ;i ++) {
+            System.out.println(alumnos.get(i).toString());
+        }
+
+    }
 
     static Estudiante buscarAlumno (List<Estudiante> alumnos,int id) {
         for (int i = 0; i < alumnos.size(); i++) {
@@ -102,12 +108,18 @@ public class Main {
          */
 
 
+        System.out.println("\n ---eliminacion ---- ej:4 ");
+        Estudiante alumnoz = buscarAlumno(alumnos,107);
+        if (alumnoz == null) {
+            System.out.println("el alumno buscado no existe");
+        } else{
 
+            alumnos.remove(alumnoz);
 
+            System.out.println("datos actualizados");
+            mostrarLista(alumnos);
 
-
-
-
+        }
 
 
 
@@ -123,6 +135,14 @@ public class Main {
          * - Ordenar la nueva lista por promedio de mayor a menor
          * - Imprimir la nueva lista
          */
+
+
+
+
+
+
+
+
 
         /*
          * TODO: Materias
