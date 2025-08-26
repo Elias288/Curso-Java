@@ -38,6 +38,21 @@ public class Main {
         }
     }
 
+
+    static List<Estudiante> buscarMateria (HashMap<String,List<Estudiante>> Materias,String nomMateria) {
+        //
+        for (Map.Entry<String, List<Estudiante>> prestamos : Materias.entrySet()) {
+            if (nomMateria == prestamos.getKey()){
+                List<Estudiante> alumnosDeLaMateria = prestamos.getValue();    // saco el valor de la key del mapa
+                return alumnosDeLaMateria;
+            }
+
+        }
+
+
+        return null;//si no entro nunca al if no encontro el numero buscado y retorna -1
+    }
+
     static Estudiante buscarAlumno (List<Estudiante> alumnos,int id) {
         for (int i = 0; i < alumnos.size(); i++) {
             if (id == alumnos.get(i).getId()) {
@@ -64,7 +79,7 @@ public class Main {
         alumnos.add(new Estudiante(110, "Javier", 5.5));
 
         /*
-         * TODO: Listado simple
+         *  Listado simple
          * - Recorrer la lista e imprimir los datos de cada estudiante
          * - Usar un for para recorrer la lista
          * - Usar la función toString() de la clase Estudiante
@@ -83,7 +98,7 @@ public class Main {
 
 
         /*
-         * TODO: Función de búsqueda
+         *  Función de búsqueda
          * - Buscar un estudiante por su ID de manera secuencial
          * - Si se encuentra, imprimir sus datos
          * - Si no se encuentra, imprimir un mensaje indicando que no existe
@@ -99,7 +114,7 @@ public class Main {
 
 
         /*
-         * TODO: Actualización de datos
+         *  Actualización de datos
          * - Buscar un estudiante por su ID
          * - Si se encuentra, actualizar su promedio
          * - Imprimir los datos del estudiante actualizado
@@ -129,7 +144,7 @@ public class Main {
 
 
         /*
-         * TODO: Eliminación de un estudiante
+         *  Eliminación de un estudiante
          * - Buscar un estudiante por su ID
          * - Si se encuentra, eliminarlo de la lista
          */
@@ -155,7 +170,7 @@ public class Main {
 
 
         /*
-         * TODO: Nueva lista evitando duplicados y ordenada por propmedio
+         *  Nueva lista evitando duplicados y ordenada por propmedio
          * - Crear una nueva lista de estudiantes sin duplicados copiando la lista ya
          * existente
          * - Usar HashSet para evitar duplicados
@@ -187,7 +202,7 @@ public class Main {
 
 
         /*
-         * TODO: Materias
+         *  Materias
          * - Crear una lista (hashMap) de materias en la que estarán listados todos los
          * estudiantes que cursan dicha materia
          * - Cada materia se identifica por un nombre (String)
@@ -225,13 +240,16 @@ public class Main {
 
 
 
-
-
-
         /*
-         * TODO: Listar estudantes de una materia
+         *  Listar estudantes de una materia
          * - Dada una materia, listar todos los estudiantes que la cursan
          */
+        System.out.println("Busqueda de alumnos de historia");
+        System.out.println(buscarMateria(Materias,"Historia"));
+
+
+
+
 
         /*
          * TODO: Función para eliminar estudiantes de una materia
