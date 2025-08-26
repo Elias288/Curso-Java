@@ -15,6 +15,9 @@ Ejemplos y ejercicios prácticos de java
 - [Módulo 7 - Búsquedas](https://docs.google.com/presentation/d/1mzrwg0wu2sRdQLI068M6qc6vpk8m5ucGJqZ0bBUzbSY/edit?usp=sharing)
   - [Ejercicio búsqueda secuencial](./src/Modulo_7_Busquedas/A_ejemploSecuencial/Ejemplo_secuencial.java)
   - [Ejercicio búsqueda binaria](./src/Modulo_7_Busquedas/B_ejemploBinario/Ejemplo_binario.java)
+- [Módulo 8 - Programación Funcional y Expresiones Labmda](./src/Modulo_8_Programacion_Funcional/Readme.md)
+  - [Ejemplo de Inmutabilidad](./src/Modulo_8_Programacion_Funcional/A_ejemplo_inmutabilidad_duplicarContenido/ejemplo_inmutabilidad.java)
+  - [Ejemplo de expresión lambda](./src/Modulo_8_Programacion_Funcional/B_ejemplo_lambda/ejemplo_lambda.java)
 
 ## Compilación sin IDE
 
