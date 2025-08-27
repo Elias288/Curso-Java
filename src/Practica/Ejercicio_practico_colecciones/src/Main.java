@@ -53,6 +53,28 @@ public class Main {
         return null;//si no entro nunca al if no encontro el numero buscado y retorna -1
     }
 
+    static void EliminarAlumnoDeMateria (HashMap<String,List<Estudiante>> Materias,String nomMateria, String nomAlumno) {
+        //ej: de la materia matematica eliminar de su lista de alumnos a pepito
+        List<Estudiante> alumnosc = buscarMateria(Materias,nomMateria);
+        Estudiante alumnoj = buscarAlumnoPnombre(alumnosc,nomAlumno);
+        alumnosc.remove(alumnoj);
+
+
+    }
+
+
+    static Estudiante buscarAlumnoPnombre (List<Estudiante> alumnos,String nombre) {
+        for (int i = 0; i < alumnos.size(); i++) {
+            if (nombre == alumnos.get(i).getNombre()) {
+                return alumnos.get(i);
+            }
+
+        }
+
+
+        return null;//si no entro nunca al if no encontro el numero buscado y retorna -1
+    }
+
     static Estudiante buscarAlumno (List<Estudiante> alumnos,int id) {
         for (int i = 0; i < alumnos.size(); i++) {
             if (id == alumnos.get(i).getId()) {
@@ -252,9 +274,16 @@ public class Main {
 
 
         /*
-         * TODO: Función para eliminar estudiantes de una materia
+         *  Función para eliminar estudiantes de una materia
          * - Dada una materia y un ID de estudiante, eliminar al estudiante de la
          * materia
          */
+        EliminarAlumnoDeMateria(Materias,"Historia","Elena");
+        
+        System.out.println("Datos actualizado de la materia historia");
+        System.out.println(buscarMateria(Materias,"Historia"));
+
+
+
     }
 }
