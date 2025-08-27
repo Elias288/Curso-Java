@@ -3,7 +3,6 @@ package Modulo_8_Programacion_Funcional.A_ejemplo_inmutabilidad_duplicarContenid
 import java.util.*;
 
 public class ejemplo_inmutabilidad {
-
     /* Recibe como parámetro la lista inmutable */
     public static List<Integer> duplicarContenido(List<Integer> listaInmutable) {
         // Crea una copia vacia
@@ -20,10 +19,10 @@ public class ejemplo_inmutabilidad {
     public static void main(String[] args) {
         List<Integer> listaInmutable = List.of(4, 5, 2, 8, 10, 15);
 
-        List<Integer> nuevaLista = duplicarContenido(listaInmutable);
+        // List<Integer> nuevaLista = duplicarContenido(listaInmutable);
 
         System.out.println("Origianal " + listaInmutable);
-        System.out.println("Copia Duplicada " + nuevaLista);
+        System.out.println("Copia Duplicada " + duplicarContenido(listaInmutable));
 
     }
 }
