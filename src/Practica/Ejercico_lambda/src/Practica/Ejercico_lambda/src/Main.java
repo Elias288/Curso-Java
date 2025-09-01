@@ -18,13 +18,19 @@ public class Main {
                 .forEach(nombre -> System.out.println("nombre que empieza por s " + nombre));
 
         /*
-         * TODO: Ejercicio consumer
+         * DONE: Ejercicio consumer
          * 1. modifica la lambda `imprimir` para mostrar el texto recibido en
          * mayusculas.
          * 2. Crea otra expresion lambda que imprima la longitud del texto recibido
          */
         Consumer<String> imprimir = texto -> System.out.println("Hola " + texto);
         imprimir.accept("Mundo");
+
+        Consumer<String> imprimirEnMayusculas = texto -> System.out.println("Hola " + texto.toUpperCase());
+        imprimirEnMayusculas.accept("otro texto");
+
+        Consumer<String> longitudTexto = texto -> System.out.println("La longitud del texto '" + texto + "' es " + texto.length());
+        longitudTexto.accept("texto");
 
         /*
          * TODO: Ejercicio Function
