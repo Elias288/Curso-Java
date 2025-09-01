@@ -2,6 +2,7 @@ package Practica.Ejercico_lambda.src;
 
 import java.util.*;
 import java.util.function.Consumer;
+import java.util.function.Function;
 
 public class Main {
 
@@ -23,21 +24,35 @@ public class Main {
          * mayusculas.
          * 2. Crea otra expresion lambda que imprima la longitud del texto recibido
          */
+        System.out.println("\nEjercico 1");
         Consumer<String> imprimir = texto -> System.out.println("Hola " + texto);
         imprimir.accept("Mundo");
 
         Consumer<String> imprimirEnMayusculas = texto -> System.out.println("Hola " + texto.toUpperCase());
         imprimirEnMayusculas.accept("otro texto");
 
+        System.out.println("\nEjercico 2");
         Consumer<String> longitudTexto = texto -> System.out.println("La longitud del texto '" + texto + "' es " + texto.length());
         longitudTexto.accept("texto");
 
         /*
-         * TODO: Ejercicio Function
+         * DONE: Ejercicio Function
          * 3. Crea un Function<String, Integer> que devuelva la longitud de un texto
          * 4. Crea un Functio<Double, Double> que convierta grados Celsius a Fahrenheit
          * TIP: Fahrenheit = (Celsius × 1.8) + 32
          */
+
+        System.out.println("\nEjercico 3");
+        Function<String , Integer> longitudTextoenfuncion = texto -> texto.length();
+        int longitud = longitudTextoenfuncion.apply("elefante");
+        System.out.println("la longitud del texto es de " + longitud);
+
+        System.out.println("\nEjercico 4");
+        Function<Double , Double> conversorTemperatura = celcius -> (celcius * 1.8) + 32;
+        Double celcius = 30.0;
+        System.out.println("Temperatura en celcius " + celcius + "  la temperatura en fahrenheit " + conversorTemperatura.apply(celcius));
+
+
 
         /*
          * TODO: Ejercicio Predicate + listas
