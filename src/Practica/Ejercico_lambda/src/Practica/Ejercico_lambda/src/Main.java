@@ -3,6 +3,7 @@ package Practica.Ejercico_lambda.src;
 import java.util.*;
 import java.util.function.Consumer;
 import java.util.function.Function;
+import java.util.stream.Collectors;
 
 public class Main {
 
@@ -13,7 +14,7 @@ public class Main {
         // .stream() .filter()
 
         List<String> nombres = Arrays.asList("Ana", "Luis", "Marta", "Pedro", "homero", "micael", "juan", "daniel",
-                "sebastian", "santiago", "valentin", "camilo", "allan", "lucas");
+                "sebastian", "Santiago", "valentin", "camilo", "allan", "lucas");
         nombres.stream()
                 .filter(nombre -> nombre.startsWith("s"))
                 .forEach(nombre -> System.out.println("nombre que empieza por s " + nombre));
@@ -55,11 +56,23 @@ public class Main {
 
 
         /*
-         * TODO: Ejercicio Predicate + listas
+         * DONE: Ejercicio Predicate + listas
          * 5. Filtrar los números mayores a 3
          * 6. De la lista de nombres filtra solo los que empiecen con "A"
          */
+        System.out.println("\nEjercico 5");
         List<Integer> numeros = Arrays.asList(1, 2, 3, 4, 5, 6);
+        numeros.stream()
+                .filter(filtro -> filtro > 3)
+                .forEach(System.out::println);
+
+        System.out.println("\nEjercico 6");
+
+
+        List<String> nombresA = nombres.stream()
+                               .filter(nombre -> nombre.toLowerCase()    .startsWith("s"))
+                                .collect(Collectors.toList());
+        System.out.println(nombresA);
 
         /*
          * TODO: Ejercicio encadenamiento de funciones
