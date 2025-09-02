@@ -69,17 +69,40 @@ public class Main {
         System.out.println("\nEjercico 6");
 
 
-        List<String> nombresA = nombres.stream()
-                               .filter(nombre -> nombre.toLowerCase()    .startsWith("s"))
+        List<String> nombresL = nombres.stream()
+                               .filter(nombre -> nombre.toLowerCase()    .startsWith("l"))
                                 .collect(Collectors.toList());
-        System.out.println(nombresA);
+        System.out.println(nombresL);
 
         /*
-         * TODO: Ejercicio encadenamiento de funciones
+         * DONE: Ejercicio encadenamiento de funciones
          * 7. De la lista de numeros filtra los pares y multiplicalos por 2
          * 8. De la lista de nombres filtra los que tengan una longitud menor a 5
          * letras, y conviertelos a mayusculas
          */
+
+        System.out.println("\nEjercico 7");
+        List<Integer> numerosFiltrado = numeros.stream()
+                .filter(numero -> numero % 2 == 0)
+                .map(numero -> numero * 2 )
+                .collect(Collectors.toList());
+        System.out.println(numerosFiltrado);
+
+
+        System.out.println("\nEjercico 8");
+
+        nombresL.stream()
+                .filter(nombre -> nombre.length() <= 5)
+                .map(nombre -> nombre.toUpperCase())
+                .forEach(System.out::println);
+
+
+
+
+
+
+
+
 
         /*
          * TODO: Tarea final
