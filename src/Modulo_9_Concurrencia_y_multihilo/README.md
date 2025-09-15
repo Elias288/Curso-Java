@@ -87,7 +87,7 @@ consumidor.start();
 
 ### 3. Lista compartida
 
-Crear una clase `ListaCompartida` que contenga un `ArrayList<Integer> lista`.
+Crear una clase `ListaCompartida implements Runnable` que contenga un `ArrayList<Integer> lista`.
 
 - Implementa métodos `agregar(int n)` y `mostrar()` con bloques sincronizados.
 - Lanzar varios hilos:
