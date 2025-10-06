@@ -105,7 +105,7 @@ public class Main {
 
 
         /*
-         * TODO: Tarea final
+         * DONE: Tarea final
          * 9. Recrea el ejercicio práctico de colecciones usando lambda.
          */
     }

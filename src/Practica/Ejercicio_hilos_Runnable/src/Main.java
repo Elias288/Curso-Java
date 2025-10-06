@@ -17,11 +17,28 @@ public class Main {
     public static void CarreraDeAutos() {
         System.out.println("Carrera de autos");
         /*
-         * Imaginando una carrera de autos. Cada auto es un hilo que vanza una distancia
+         * Imaginando una carrera de autos. Cada auto es un hilo que vanza una distancia aleatoria
          * el que llega primero a la meta gana.
          * Se debe mostrar en tiempo real la carrera.
          * Math.random()
          */
+
+
+        Thread Auto1 = new Thread(new AutoHilo("ROJO"));
+        Thread Auto2 = new Thread(new AutoHilo("AZUL"));
+
+        Auto1.start();
+        Auto2.start();
+        System.out.println("\n");
+
+
+        try {
+            Auto1.join();
+            Auto2.join();
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+
     }
 
     public static void FabricaComercio() {
@@ -40,7 +57,7 @@ public class Main {
         /*
          * Crear una clase que implemente Runnables que permita imprimir en consola la hora actual cada segundo.
          * Utilizando sleep() y LocalTime.now()
-         * 
+         *
          */
     }
 
