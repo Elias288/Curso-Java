@@ -26,6 +26,7 @@ Ejemplos y ejercicios prácticos de java
   - [Ejemplo concurrencia](./src/Modulo_9_Concurrencia_y_multihilo/C_ejemplo_concurrencia_multihilo.java)
   - [Ejemplo Sincronización y comunicación](./src/Modulo_9_Concurrencia_y_multihilo/D_ejemplo_Sincronizacion_y_Comunicacion.java)
   - [Ejemplo Sincronización con wait y notify](./src/Modulo_9_Concurrencia_y_multihilo/E_ejemplo_semaforo.java)
+- [Módulo 10 - Acceso a base de datos](./src/Modulo_10_Acceso_a_base_de_datos/README.md)
 
 ## Compilación sin IDE
 
