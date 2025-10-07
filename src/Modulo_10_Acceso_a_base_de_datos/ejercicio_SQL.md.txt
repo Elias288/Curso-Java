@@ -1,0 +1,58 @@
+# Ejercicio SQL
+
+```sql
+--ejercicio 1
+SELECT nombre FROM Producto
+
+--ejercicio 2
+SELECT nombre,precio FROM Producto 
+
+--ejercicio 3
+SELECT nombre as "nombre de Producto",precio as "precio en dolares"  FROM Producto 
+
+--ejercicio 4
+SELECT F.id FROM Fabricante as F, Producto as P WHERE P.id_fabricante = F.id
+
+--ejercicio 5   evitar duplicados con inner join
+SELECT DISTINCT (F.id) FROM Fabricante as F INNER JOIN Producto as P on F.id = P.id_fabricante; 
+
+--ejercicio 6   ordenar ascendientemente 
+SELECT nombre FROM Fabricante ORDER by Upper(nombre) ASC
+
+--ejercicio 7 ordenar descendientemente
+SELECT nombre FROM Fabricante ORDER by Upper(nombre) DESC
+
+--ejercicio 8 selecciona los 5 primeros
+SELECT * from Fabricante LIMIT 5;
+
+--ejercicio 9
+SELECT nombre,precio FROM Producto ORDER by precio DESC LIMIT 1
+
+```ejercicio 10
+SELECT nombre,precio FROM Producto ORDER by precio ASC LIMIT 1
+
+--ejercicio 11 
+SELECT * FROM Producto as P INNER join Fabricante as F on F.id = P.id_fabricante WHERE F.id = 2	
+
+--ejercicio 12
+SELECT nombre FROM Producto WHERE precio <= 120	
+
+--ejercicio 13
+SELECT nombre FROM Producto WHERE precio >= 400	
+
+--ejerccio 14
+SELECT nombre,precio FROM Producto WHERE precio >= 80 and precio <= 300
+
+--ejercicio 15
+SELECT nombre,precio FROM Producto WHERE precio BETWEEN 60 and 200
+
+--ejercicio 16
+SELECT * FROM Producto as P INNER join Fabricante as F on F.id = P.id_fabricante WHERE F.id = 6 and P.precio > 200
+
+--ejercicio 17
+
+
+--ejercicio 18
+
+
+
