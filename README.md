@@ -7,6 +7,7 @@ Ejemplos y ejercicios prácticos de java
   - [Ejercicio Final de Colecciones](./src/Practica/ejercicio_final_colecciones/README.md)
   - [Ejercicio Lambdas](./src/Practica/Ejercico_lambda/README.md)
 - [Módulo extra - Git/Github](https://docs.google.com/presentation/d/1DqdbNjNjkL9wKToBH1xh6Dyu0GY6jptj3OxJCCpiMsY/edit?usp=sharing)
+- [Módulo extra - Contenedores](./src/Modulo_extra_Contenedores/README.md)
 - Módulo 5 - Programación orientada a objetos en Java
   - [Ejercicio de Animales](./src/Modulo_5_OOP/Animales/EjercicioAnimales.java)
   - [Ejercicio Calculadora](./src/Modulo_5_OOP/Calculadora/Calculadora.java)
@@ -26,6 +27,7 @@ Ejemplos y ejercicios prácticos de java
   - [Ejemplo concurrencia](./src/Modulo_9_Concurrencia_y_multihilo/C_ejemplo_concurrencia_multihilo.java)
   - [Ejemplo Sincronización y comunicación](./src/Modulo_9_Concurrencia_y_multihilo/D_ejemplo_Sincronizacion_y_Comunicacion.java)
   - [Ejemplo Sincronización con wait y notify](./src/Modulo_9_Concurrencia_y_multihilo/E_ejemplo_semaforo.java)
+- [Módulo 10 - Acceso a base de datos](./src/Modulo_10_Acceso_a_base_de_datos/README.md)
 
 ## Compilación sin IDE
 
