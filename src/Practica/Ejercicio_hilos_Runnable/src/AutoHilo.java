@@ -1,10 +1,13 @@
 package Practica.Ejercicio_hilos_Runnable.src;
 
+import java.sql.SQLOutput;
+
 public class AutoHilo implements Runnable {
     private int distanciaRandom = 0;
     private final String color;
-    private final int meta = 100;
-
+    private final int meta = 10;
+    public static boolean ganador = false;
+    public static final Object finalizar = new Object();
 
 
     public AutoHilo(String color) {
@@ -24,10 +27,21 @@ public class AutoHilo implements Runnable {
         return color;
     }
 
+    public boolean isGanador() {
+        return ganador;
+    }
 
     @Override
     public void run() {
+
         while (distanciaRandom <= meta) {
+            synchronized (finalizar) {
+                if (ganador){
+                    System.out.println("gano otro auto");
+                    return;
+                }
+
+            }
             distanciaRandom = distanciaRandom + (int) (Math.random() * (10 - 1)) + 1;
             System.out.println("el auto " + this.color + " va en el km " + distanciaRandom);
 
@@ -36,11 +50,6 @@ public class AutoHilo implements Runnable {
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
-
-
-
-
-
 
 
 
@@ -62,6 +71,9 @@ public class AutoHilo implements Runnable {
             }*/
 
         }
+
+
+
 
 
     }

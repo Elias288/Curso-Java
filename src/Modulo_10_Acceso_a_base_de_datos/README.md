@@ -55,3 +55,20 @@ UPDATE Empleado SET id_equipo = 2202 WHERE id=1152;
 UPDATE Empleado SET id_equipo = 2202 WHERE id=3489;
 UPDATE Empleado SET id_equipo = 2202 WHERE id=3649;
 ```
+
+```sql
+-- consulta al empleado con id 2000
+SELECT * from Empleado WHERE id = 2000;
+
+--busca al empleado con el nombre lucia
+SELECT * from Empleado WHERE nombre = 'Lucía';
+
+--busca el teléfono y apellido de la tabla empleados con el nombre franco
+SELECT telefono,apellido FROM Empleado WHERE nombre =  'Franco'
+
+--busca el nombre y apellido de la tabla empleados (con el nombre e) por su id de jefe (con el nombre j)
+SELECT e.nombre, e.apellido from Empleado as e,Jefe as j WHERE j.id_empleado = e.id and j.id = 3188
+
+--busca los datos de los empleados de un equipo por su nombre de equipo
+SELECT e.id, e.nombre, e.apellido, e.telefono, e.id_equipo, eq.nombre_equipo from Empleado as e, EquipoDeTrabajo as eq WHERE e.id_equipo = eq.id and eq.nombre_equipo = 'equipo1' 	
+```

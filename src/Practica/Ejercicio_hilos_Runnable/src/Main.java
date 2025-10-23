@@ -23,18 +23,28 @@ public class Main {
          * Math.random()
          */
 
+        String ganador = "";
 
-        Thread Auto1 = new Thread(new AutoHilo("ROJO"));
-        Thread Auto2 = new Thread(new AutoHilo("AZUL"));
+        AutoHilo AutoRojo = new AutoHilo("ROJO");
+        AutoHilo AutoAzul = new AutoHilo("AZUL");
+
+
+        Thread Auto1 = new Thread(AutoRojo);
+        Thread Auto2 = new Thread(AutoAzul);
+
+
+
 
         Auto1.start();
         Auto2.start();
         System.out.println("\n");
 
-
         try {
             Auto1.join();
             Auto2.join();
+
+
+
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
@@ -50,6 +60,42 @@ public class Main {
          * está vacia el comercio
          * no puede vender.
          */
+
+        Thread buffer_consu = new Thread(new Fabrica_Comercio("Fabrica"));
+        Thread buffer_produ = new Thread(new Fabrica_Comercio("Comercio"));
+
+        buffer_produ.start();
+        buffer_consu.start();
+
+
+        try {
+        for (int i = 0; i <= 10; i++) {
+
+
+                buffer_consu.join();
+                buffer_produ.join();
+
+
+
+
+        }
+    } catch (InterruptedException e) {
+        throw new RuntimeException(e);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
 
     public static void RelojesIndependientes() {
