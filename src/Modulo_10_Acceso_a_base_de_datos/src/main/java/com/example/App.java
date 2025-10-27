@@ -1,7 +1,6 @@
 package com.example;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -128,12 +127,10 @@ public class App {
 
     public static void main(String[] args) {
         // System.out.println( "Hello World!" );
-        String url = "jdbc:mariadb://localhost:3306/mi_base";
-        String usuario = "root";
-        String contraseña = "pass123";
 
-        try (Connection conexion = DriverManager.getConnection(url, usuario, contraseña)) {
-            System.out.println("\n✅ Conexión exitosa a MariaDB!\n");
+        Connection conexion = Conexion.getConnection();
+        if (conexion != null) {
+            System.out.println("\nConexión exitosa a MariaDB!\n");
 
             getAllEmpleados(conexion);
             Empleado camila = getEmpleadoByName(conexion, "Camila");
@@ -154,9 +151,6 @@ public class App {
 
             getAllEmpleados(conexion);
             deleteEmpleado(conexion, em1);
-
-        } catch (SQLException e) {
-            System.out.println("❌ Error al conectar: " + e.getMessage());
         }
     }
 }
