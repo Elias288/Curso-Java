@@ -7,13 +7,13 @@ import java.sql.SQLException;
 
 public class usuarioDAO {
 
-    public static void insertarUsuario (String nombrex1, String contraseña1) {
+    public static void insertarUsuario(String nombrex1, String contraseña1) {
         try (Connection con = Conexion.getConnection()) {
             String sql = "insert into usuarios (nombre,contrasenia) values (?,?);";
             PreparedStatement stmt = con.prepareStatement(sql);
 
             stmt.setString(1, nombrex1);
-            stmt.setString(2,contraseña1);
+            stmt.setString(2, contraseña1);
             ResultSet rs = stmt.executeQuery();
 
             if (rs.next()) {
@@ -32,8 +32,8 @@ public class usuarioDAO {
         }
 
 
-
     }
+
     public static Usuario getUsuario(String nombrex) {
         try (Connection con = Conexion.getConnection()) {
             String sql = "select * from usuarios where nombre = ?;";
@@ -61,7 +61,17 @@ public class usuarioDAO {
 
     }
 
+    public static Usuario login(String user, String pass) {
+        Usuario usuariox = usuarioDAO.getUsuario(user);
+        if (usuariox == null || !usuariox.validarUsuario(pass)) {
+            System.out.println("usuario o contraseña incorrectos");
+            return null;
+        }
 
+        return usuariox;
+    }
+
+    ;
 
 
 }

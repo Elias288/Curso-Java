@@ -6,6 +6,10 @@ public class Usuario {
     private String contrasenia = "";
     private String rol = "";
 
+    public Integer getId() {
+        return id;
+    }
+
     public String getNombre() {
         return nombre;
     }
@@ -38,10 +42,12 @@ public class Usuario {
 
         return false;
     }
+
     @Override
-    public String toString () {
+    public String toString() {
         return this.id + " | " + this.nombre + " | " + this.rol;
     }
+
     public Usuario(String nombre, String contrasenia, String rol, Integer id) {
         this.nombre = nombre;
         this.contrasenia = contrasenia;
